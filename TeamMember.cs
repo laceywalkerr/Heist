@@ -8,5 +8,11 @@ namespace Heist
         public int _skillLevel { get; set; }
         public decimal _courageFactor { get; set; }
 
+        public void addMember()
+        {
+
+        }
+
     }
+
 }
