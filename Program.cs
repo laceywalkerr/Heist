@@ -38,18 +38,28 @@ namespace Heist
 
                 teammates.Add(newTeammate);
 
-                foreach (TeamMember teammate in teammates)
-                {
-                    Console.WriteLine($"Team member info: {teammate._name} has a skill level of {teammate._skillLevel} and a courage factor of {teammate._courageFactor}");
-                };
-                Console.WriteLine($"Number of Teammates: {teammates.Count}");
+                // foreach (TeamMember teammate in teammates)
+                // {
+                //     Console.WriteLine($"Team member info: {teammate._name} has a skill level of {teammate._skillLevel} and a courage factor of {teammate._courageFactor}");
+                // };
+                // Console.WriteLine($"Number of Teammates: {teammates.Count}");
 
             };
 
-            // foreach (Teammate in Teammates)
-            // {
-            //     Console.WriteLine($"Team member info: {name} has a skill level of {skillLevel} and a courage factor of {courageFactor}");
-            // }
+            int difficultyLevel = 100;
+            Console.WriteLine($"Bank Difficulty Level: {difficultyLevel}");
+
+            int teamSkillLevel = teammates.Sum(teammate => teammate._skillLevel);
+            if (teamSkillLevel >= difficultyLevel)
+            {
+                Console.WriteLine("You win! You got all the monies!");
+            }
+            else
+            {
+                Console.WriteLine("Sorry, you got busted. Try building a stronger team next time!");
+            }
+
+            Console.WriteLine($"Team Skill Level: {teamSkillLevel}");
 
         }
     }
