@@ -76,7 +76,6 @@ The program should be updated to...
 ```sh
 mkdir -p ~/workspace/Heist && cd $_
 dotnet new console -n Heist -o .
-touch Building.cs
 ```
 
 dotnet run to run program from console
