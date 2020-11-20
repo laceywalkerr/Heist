@@ -47,10 +47,11 @@ namespace Heist
             };
 
             int difficultyLevel = 100;
-            Console.WriteLine($"Bank Difficulty Level: {difficultyLevel}");
+            int luckyNum = new Random().Next(-10, 10);
+            int luckAndDifficulty = luckyNum + difficultyLevel;
 
             int teamSkillLevel = teammates.Sum(teammate => teammate._skillLevel);
-            if (teamSkillLevel >= difficultyLevel)
+            if (teamSkillLevel >= luckAndDifficulty)
             {
                 Console.WriteLine("You win! You got all the monies!");
             }
@@ -60,6 +61,9 @@ namespace Heist
             }
 
             Console.WriteLine($"Team Skill Level: {teamSkillLevel}");
+            Console.WriteLine($"Bank Difficulty Level: {luckAndDifficulty}");
+
+            Console.WriteLine($"Testing View Random Luck Level: {luckyNum}");
 
         }
     }
