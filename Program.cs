@@ -46,24 +46,28 @@ namespace Heist
 
             };
 
-            int difficultyLevel = 100;
-            int luckyNum = new Random().Next(-10, 10);
-            int luckAndDifficulty = luckyNum + difficultyLevel;
-
-            int teamSkillLevel = teammates.Sum(teammate => teammate._skillLevel);
-            if (teamSkillLevel >= luckAndDifficulty)
+            Console.WriteLine("Enter how many times you would like to try to rob the bank with your team: ");
+            int heistAttempts = int.Parse(Console.ReadLine());
+            for (int num = 0; num < heistAttempts; num++)
             {
-                Console.WriteLine("You win! You got all the monies!");
-            }
-            else
-            {
-                Console.WriteLine("Sorry, you got busted. Try building a stronger team next time!");
-            }
+                int difficultyLevel = 100;
+                int luckyNum = new Random().Next(-10, 10);
+                int luckAndDifficulty = luckyNum + difficultyLevel;
 
-            Console.WriteLine($"Team Skill Level: {teamSkillLevel}");
-            Console.WriteLine($"Bank Difficulty Level: {luckAndDifficulty}");
+                int teamSkillLevel = teammates.Sum(teammate => teammate._skillLevel);
+                if (teamSkillLevel >= luckAndDifficulty)
+                {
+                    Console.WriteLine("You win! You got all the monies!");
+                }
+                else
+                {
+                    Console.WriteLine("Sorry, you got busted. Try building a stronger team next time!");
+                }
 
-            Console.WriteLine($"Testing View Random Luck Level: {luckyNum}");
+                Console.WriteLine($"Team Skill Level: {teamSkillLevel}");
+                Console.WriteLine($"Bank Difficulty Level: {luckAndDifficulty}");
+                Console.WriteLine($"Testing View Random Luck Level: {luckyNum}");
+            }
 
         }
     }
