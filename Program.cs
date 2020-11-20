@@ -17,7 +17,7 @@ namespace Heist
             // while loop runs through the team members
             while (name != "")
             {
-                Console.WriteLine("Add your new team members name , or press enter to close and see your tea: ");
+                Console.WriteLine("Add your new team members name, or press enter to close and see your team: ");
                 //breaks code if user does not enter a name
                 name = Console.ReadLine();
                 if (name == "")
@@ -42,6 +42,7 @@ namespace Heist
                 {
                     Console.WriteLine($"Team member info: {teammate._name} has a skill level of {teammate._skillLevel} and a courage factor of {teammate._courageFactor}");
                 };
+                Console.WriteLine($"Number of Teammates: {teammates.Count}");
 
             };
 
